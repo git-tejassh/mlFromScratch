@@ -10,39 +10,49 @@ Linear Regression models the relationship between input features and a continuou
 
 ## Mathematical Formulation
 
+The objective of Linear Regression is to learn the optimal parameters **W** and **b** that minimize the prediction error over the training data.
+
 ### Prediction
 
 $$
-\hat{y} = XW + b
+\hat{\mathbf{y}} = \mathbf{XW} + b
 $$
 
 where:
 
-- $X$ : Input feature matrix
-- $W$ : Weight vector
+- $\mathbf{X}$ : Input feature matrix
+- $\mathbf{W}$ : Weight vector
 - $b$ : Bias term
-- $\hat{y}$ : Predicted output
+- $\hat{\mathbf{y}}$ : Predicted output vector
 
 ---
 
 ### Loss Function (Mean Squared Error)
 
 $$
-L = \frac{1}{N}\sum_{i=1}^{N}\frac{(y_i-\hat{y}_i)^2}{2}
+L(\mathbf{W}, b) =
+\frac{1}{N}
+\sum_{i=1}^{N}
+\frac{\left(y_i-\hat{y}_i\right)^2}{2}
 $$
 
 where:
 
 - $N$ : Number of training samples
-- $y$ : Ground truth
-- $\hat{y}$ : Model prediction
+- $y_i$ : Ground truth value for sample $i$
+- $\hat{y}_i$ : Predicted value for sample $i$
 
 ---
 
 ### Gradient Descent Weight Update
 
 $$
-W = W - \eta \frac{\partial L}{\partial W}
+\mathbf{W}
+\leftarrow
+\mathbf{W}
+-
+\eta
+\frac{\partial L}{\partial \mathbf{W}}
 $$
 
 ---
@@ -50,16 +60,21 @@ $$
 ### Bias Update
 
 $$
-b = b - \eta \frac{\partial L}{\partial b}
+b
+\leftarrow
+b
+-
+\eta
+\frac{\partial L}{\partial b}
 $$
 
 where:
 
 - $\eta$ : Learning rate
 
-The model is trained by minimizing Mean Squared Error using manually implemented Stochastic Gradient Descent.
-
 ---
+
+The model is trained by minimizing the Mean Squared Error (MSE) loss using a custom implementation of **Mini-Batch Stochastic Gradient Descent (SGD)**. During each training iteration, gradients are computed via PyTorch's automatic differentiation, while parameter updates are performed manually without using `torch.optim`.
 
 # Features
 
