@@ -8,16 +8,54 @@ Implementation of Linear Regression using Gradient Descent without relying on Sc
 
 Linear Regression models the relationship between input features and a continuous target by learning a linear function
 
-\[
-\hat{y}=XW+b
-\]
+## Mathematical Formulation
 
-where
+### Prediction
 
-- **X** : input features
-- **W** : learnable weights
-- **b** : bias
-- **ŷ** : predicted output
+$$
+\hat{y} = XW + b
+$$
+
+where:
+
+- $X$ : Input feature matrix
+- $W$ : Weight vector
+- $b$ : Bias term
+- $\hat{y}$ : Predicted output
+
+---
+
+### Loss Function (Mean Squared Error)
+
+$$
+L = \frac{1}{N}\sum_{i=1}^{N}\frac{(y_i-\hat{y}_i)^2}{2}
+$$
+
+where:
+
+- $N$ : Number of training samples
+- $y$ : Ground truth
+- $\hat{y}$ : Model prediction
+
+---
+
+### Gradient Descent Weight Update
+
+$$
+W = W - \eta \frac{\partial L}{\partial W}
+$$
+
+---
+
+### Bias Update
+
+$$
+b = b - \eta \frac{\partial L}{\partial b}
+$$
+
+where:
+
+- $\eta$ : Learning rate
 
 The model is trained by minimizing Mean Squared Error using manually implemented Stochastic Gradient Descent.
 
