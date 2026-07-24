@@ -110,14 +110,14 @@ class LinearRegressionFromScratch():
 
   @torch.no_grad()
   def predict(self, x):
-    x = torch.tensor(x)
+    x = torch.tensor(x, dtype=torch.float32)
     y = self.calc(x)
     return y.detach().tolist()
 
 
 
   @torch.no_grad()
-  def plot(self,):
+  def history(self,):
     epoch_train_loss = self.loss_mean_store
     epoch_val_loss = self.val_loss_mean_store
     num_epochs = len(epoch_train_loss)
@@ -142,6 +142,53 @@ class LinearRegressionFromScratch():
     plt.legend()
 
     plt.show()
+    
+  # def plot(self, ip_data, data_set):
+  #   y_hat_list = []
+  #   y_list = []
+  #   x_mean_list = []
+  #   data_set_list = []
+  #   data_value_list = []
+  #   for i in range(len(ip_data)):
+  #     x = ip_data[i]
+  #     x = x[0]
+  #     x_show = x[0]
+  #     y = ip_data[i]
+  #     y = y[1]
+  #     y_hat = self.predict(x)
+      
+  #     if isinstance(y_hat, (list, np.ndarray)):
+  #           y_hat_list.append(float(np.ravel(y_hat)[0]))
+  #     else:
+  #           y_hat_list.append(float(y_hat))
+            
+  #     if isinstance(y, (list, np.ndarray)):
+  #           y_list.append(float(np.ravel(y)[0]))
+  #     else:
+  #           y_list.append(float(y))
+      
+
+  #     x_mean_list.append(x_show)
+      
+  #   for i in range(len(data_set)):
+  #     dt = data_set
+  #     dtx = dt[0]
+  #     dtxx = dtx[i]
+  #     dty = dt[1]
+  #     dtyy = dty[i]
+      
+  #     data_set_list.append(dtxx[0])
+  #     data_value_list.append(self.predict(dtxx))
+      
+  #   plt.scatter(x_mean_list, y_hat_list, c="r", marker='x', label = 'predicted value')
+  #   plt.scatter(x_mean_list, y_list, c="b", marker="x", label = 'original value')
+  #   plt.plot(data_set_list , data_value_list, color= 'orange', label = 'linear regression line')
+    
+  #   plt.grid(visible=True, axis='both', linestyle='-', color='gray', linewidth=0.6)
+  #   plt.legend()
+  #   plt.show()
+      
+      
 
 class SGD():
   def __init__(self, params, lr):
