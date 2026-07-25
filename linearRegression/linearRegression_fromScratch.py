@@ -42,12 +42,13 @@ class LinearRegressionFromScratch():
 
     self.loss_mean_store = []
     self.val_loss_mean_store = []
-    loss_mean = 0
+
     total_loss = 0
     total_val_loss = 0
     ##ingesting the data, converting it back to x and y - but now in vector format
     num_bts = len(train_data)
     for epoch in range(epochs):
+      loss_mean = 0
       print('-'*10 , epoch+1, '-'*10)
       for bts in range(num_bts):
         batch = train_data[bts]
