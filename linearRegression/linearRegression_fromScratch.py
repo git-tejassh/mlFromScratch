@@ -3,6 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
+import sys
+sys.path.append("C:/Users/tjsss/OneDrive/Desktop/machine learning/mlFromScratch")
+
+from utils.gradientDescent import SGD
+
 
 class LinearRegressionFromScratch():
   def __init__(self, num_inputs, lr, sigma = 0.01,):
@@ -189,22 +194,4 @@ class LinearRegressionFromScratch():
   #   plt.show()
       
       
-
-class SGD():
-  def __init__(self, params, lr):
-    self.params = params
-    self.lr = lr
-
-  def step(self):
-    with torch.no_grad():
-      for param in self.params:
-        if param.grad is not None:
-          param -= self.lr * param.grad
-
-    return self.params
-
-  def zero_grad(self):
-    for param in self.params:
-      if param.grad is not None:
-        param.grad.zero_()
 
