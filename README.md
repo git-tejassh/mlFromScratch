@@ -25,15 +25,29 @@ MachineLearning-FromScratch/
 │
 ├── README.md
 │
+│
+├── utils/
+│   ├── dataloader.py
+│   ├── gradientDescent.py
+│   ├── utilities.py
+│
+│
 ├── linearRegression/
 │   ├── README.md
 │   ├── linearRegression_fromScratch.py
 │   ├── linearRegression_scratch.ipynb
-│   └── dataLoader.py
+│   
 │
 ├── logisticRegression/
+│   ├── README.md
+│   ├── logisticRegression.ipynb
+│   ├── main.py
 │
 ├── softmaxRegression/
+│   ├──README.md
+│   ├──main.py
+│   ├──main_notebook.ipynb
+│
 │
 ├── decisionTree/
 │
@@ -69,8 +83,8 @@ MachineLearning-FromScratch/
 | Algorithm           | Status      |
 | ------------------- | ----------- |
 | Linear Regression   | ✅ Complete |
-| Logistic Regression | ⏳ Planned  |
-| Softmax Regression  | ⏳ Planned  |
+| Logistic Regression | ✅ Complete |
+| Softmax Regression  | 🏃‍♂️ Ongoing |
 | Decision Tree       | ⏳ Planned  |
 | Random Forest       | ⏳ Planned  |
 | Naive Bayes         | ⏳ Planned  |
