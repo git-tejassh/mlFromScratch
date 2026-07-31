@@ -84,7 +84,7 @@ MachineLearning-FromScratch/
 | ------------------- | ----------- |
 | Linear Regression   | ✅ Complete |
 | Logistic Regression | ✅ Complete |
-| Softmax Regression  | 🏃‍♂️ Ongoing |
+| Softmax Regression  | ✅ Complete |
 | Decision Tree       | ⏳ Planned  |
 | Random Forest       | ⏳ Planned  |
 | Naive Bayes         | ⏳ Planned  |
