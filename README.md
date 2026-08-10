@@ -36,7 +36,7 @@ MachineLearning-FromScratch/
 │   ├── README.md
 │   ├── linearRegression_fromScratch.py
 │   ├── linearRegression_scratch.ipynb
-│   
+│
 │
 ├── logisticRegression/
 │   ├── README.md
@@ -89,7 +89,7 @@ MachineLearning-FromScratch/
 | Random Forest       | ⏳ Planned  |
 | Naive Bayes         | ⏳ Planned  |
 | KNN                 | ⏳ Planned  |
-| SVM                 | ⏳ Planned  |
+| SVM                 | ✅ Complete |
 | PCA                 | ⏳ Planned  |
 | K-Means             | ⏳ Planned  |
 
