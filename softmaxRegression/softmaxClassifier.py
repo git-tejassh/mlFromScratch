@@ -1,17 +1,27 @@
 from utils.gradientDescent import SGD
+from utils.neuralNetwork import CustomLinear
 import torch
 import torch.nn as nn
+import numpy as np
 from utils.crossEntropyLoss import CrossEntropyLoss
 import matplotlib.pyplot as plt
+
+
+
 
 class Classifier(nn.Module):
     
     def __init__(self, input_dims ,n_classes):
         super().__init__()
         self.n_classes = n_classes
-        self.linear = nn.Linear(input_dims*input_dims ,self.n_classes)
-        self.bias = self.linear.bias
+        
+        # self.linear = nn.Linear(input_dims*input_dims ,self.n_classes)
+        # self.bias = self.linear.bias
+        # self.weight = self.linear.weight
+        flat_input_dims = input_dims**2
+        self.linear = CustomLinear(in_feats=flat_input_dims, out_feats=n_classes, bias = True)
         self.weight = self.linear.weight
+        self.bias = self.linear.bias
 
         self.criterion = CrossEntropyLoss()
 
@@ -122,6 +132,7 @@ class Classifier(nn.Module):
         plt.title(f'Prediction: {labels[prediction]}')
         plt.tight_layout()
         plt.show()
+        return labels[prediction]
         
         
         
