@@ -120,7 +120,7 @@ class Classifier(nn.Module):
         return (val_loss.mean().item(), val_acc.mean().item())
     
     @torch.no_grad()
-    def predict(self, x):
+    def plot_predict(self, x):
         labels = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat',
               'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']
         logits = self.calc(x.unsqueeze(0))
@@ -133,6 +133,14 @@ class Classifier(nn.Module):
         plt.tight_layout()
         plt.show()
         return labels[prediction]
+    
+    def predict(self, x):
+        labels = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat',
+              'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']
+        logits = self.calc(x.unsqueeze(0))
+        prediction = torch.argmax(logits, 1).item()
+        
+        return prediction
         
         
         
