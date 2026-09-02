@@ -78,7 +78,7 @@ class Metrics:
             
         return (true_positives / (true_positives + false_negatives)) * 100
     
-    def f1_score(self):
+    def f1_score(self, positive_class=1):
         """Calculate the harmonic mean of precision and recall.
 
         Returns:
@@ -86,8 +86,8 @@ class Metrics:
             are zero.
         """
 
-        precision = self.precision()
-        recall = self.recall()
+        precision = self.precision(positive_class=positive_class)
+        recall = self.recall(positive_class=positive_class)
         
         if precision + recall == 0:
             return 0
