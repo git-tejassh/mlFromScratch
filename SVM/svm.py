@@ -14,7 +14,6 @@ class Classifier():
         output = torch.matmul(x, self.weight) + self.bias
         pred_label = torch.sign(output)
         return torch.where(pred_label <= -1, 0, 1)
-    
     def loss_fn(self, data):
         x = data[0] 
         y = data[1]
